@@ -1,39 +1,79 @@
-const packs = [
-  { title: 'Базовый', price: '39 000 ₽', items: ['Стратегия', '2 креатива', 'Еженедельный отчёт'] },
-  { title: 'Рост', price: '69 000 ₽', items: ['Стратегия', '6 креативов', '2 созвона в месяц', 'Дашборд'] },
-  { title: 'Премиум', price: '109 000 ₽', items: ['Полное ведение', 'Тесты гипотез', 'Созвоны', 'Приоритетная связь'] }
-]
+import Link from 'next/link'
+import { proposals } from '@/lib/demo'
 
 export default function ProposalPage({ params }: { params: { slug: string } }) {
+  const proposal = proposals.find((item) => item.slug === params.slug) ?? proposals[0]
+
   return (
-    <main className="container">
-      <section className="hero" style={{ paddingTop: 40 }}>
-        <span className="badge">КП для {decodeURIComponent(params.slug)}</span>
-        <h1 style={{ fontSize: 44 }}>Коммерческое предложение по продвижению</h1>
-        <p className="lead">Собрали для вас 3 варианта сотрудничества. Можно выбрать подходящий пакет и сразу написать в Telegram.</p>
+    <main className="container page-space">
+      <section className="hero compact-hero">
+        <span className="badge">Публичное КП</span>
+        <h1>{proposal.title}</h1>
+        <p className="lead">{proposal.subtitle}</p>
         <div className="actions">
-          <a className="btn btn-primary" href="https://t.me/username">Написать в Telegram</a>
-          <a className="btn btn-secondary" href="#">Скачать PDF</a>
+          <a className="btn btn-primary" href="#packages">Выбрать пакет</a>
+          <a className="btn btn-secondary" href="#faq">Есть вопросы</a>
         </div>
       </section>
-      <section>
+
+      <section className="card">
+        <div className="mini-label">Зачем эта страница работает лучше обычного PDF</div>
+        <p>{proposal.audience}</p>
+      </section>
+
+      <section id="packages">
         <h2 className="section-title">Пакеты</h2>
         <div className="grid">
-          {packs.map((pack) => (
-            <div className="card" key={pack.title}>
-              <h3>{pack.title}</h3>
-              <p style={{ marginBottom: 12, color: 'var(--text)', fontWeight: 700 }}>{pack.price}</p>
-              <p>{pack.items.join(' • ')}</p>
+          {proposal.packages.map((pkg) => (
+            <div className={`card ${pkg.featured ? 'featured-card' : ''}`} key={pkg.name}>
+              <div className="mini-label">{pkg.price}</div>
+              <h3>{pkg.name}</h3>
+              <p>{pkg.note}</p>
+              <ul className="feature-list">
+                {pkg.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}
+              </ul>
+              <a className="btn btn-primary btn-full" href="https://t.me/example">Написать в Telegram</a>
             </div>
           ))}
         </div>
       </section>
+
       <section>
-        <h2 className="section-title">Почему сработает</h2>
-        <div className="grid">
-          <div className="card"><h3>Кейсы</h3><p>Покажем примеры роста заявок и снижения стоимости лида на похожих проектах.</p></div>
-          <div className="card"><h3>Процесс</h3><p>Аудит → гипотезы → запуск → еженедельные отчёты → масштабирование.</p></div>
-          <div className="card"><h3>Условия</h3><p>Старт за 3 рабочих дня, еженедельная отчётность, работа по договору.</p></div>
+        <h2 className="section-title">Кейсы</h2>
+        <div className="grid grid-2">
+          {proposal.cases.map((item) => (
+            <div className="card" key={item.title}>
+              <div className="mini-label">{item.result}</div>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="split-section">
+        <div className="card">
+          <div className="mini-label">Процесс</div>
+          <h3>Как идёт работа после согласования</h3>
+          <p>Созвон → доступы → запуск → еженедельная оптимизация → короткие отчёты с выводами и следующими шагами.</p>
+        </div>
+        <div className="card">
+          <div className="mini-label">Следующий шаг</div>
+          <h3>Предлагаем созвон на 20 минут</h3>
+          <p>На созвоне можно быстро выбрать пакет и адаптировать состав работ под задачу клиента.</p>
+          <Link className="btn btn-primary btn-full" href="/dashboard">Вернуться в демо</Link>
+        </div>
+      </section>
+
+      <section id="faq">
+        <h2 className="section-title">FAQ</h2>
+        <div className="stack-md">
+          {proposal.faq.map((item) => (
+            <div className="card" key={item.q}>
+              <h3>{item.q}</h3>
+              <p>{item.a}</p>
+            </div>
+          ))}
         </div>
       </section>
     </main>
