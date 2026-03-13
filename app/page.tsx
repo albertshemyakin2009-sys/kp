@@ -48,8 +48,8 @@ export default function HomePage() {
             Вместо ручной сборки в Google Docs и бесконечных «скиньте КП ещё раз».
           </p>
           <div className="actions">
-            <Link className="btn btn-primary" href="/dashboard">Открыть демо</Link>
-            <Link className="btn btn-secondary" href="/proposal/demo-client">Посмотреть пример КП</Link>
+            <Link className="btn btn-primary" href="/proposal/demo-client">Посмотреть пример КП</Link>
+            <Link className="btn btn-secondary" href="/create">Собрать demo-КП</Link>
           </div>
           <p className="microcopy">Подходит для SMM, таргета, продакшна, веб-студий и небольших агентств.</p>
         </div>
@@ -97,7 +97,7 @@ export default function HomePage() {
           <p>
             Подача строится вокруг скорости, digital-специализации и follow-up. Это помогает отличаться от больших универсальных proposal-сервисов.
           </p>
-          <Link className="btn btn-primary" href="/packages">Посмотреть шаблоны пакетов</Link>
+          <Link className="btn btn-primary" href="/packages">Открыть пакеты</Link>
         </div>
       </section>
 
@@ -127,11 +127,11 @@ export default function HomePage() {
         <div>
           <div className="mini-label">Следующий шаг</div>
           <h2>Уже можно показывать потенциальным клиентам и собирать обратную связь.</h2>
-          <p>Это не просто экран с оффером, а понятный MVP-скелет продукта: landing, пакеты, дашборд и публичная страница КП.</p>
+          <p>Теперь это не только витрина: пакеты редактируются, а demo-КП создаётся внутри проекта и открывается по отдельной ссылке.</p>
         </div>
         <div className="actions actions-vertical">
-          <Link className="btn btn-primary" href="/dashboard">Открыть демо</Link>
-          <Link className="btn btn-secondary" href="/create">Сценарий создания КП</Link>
+          <Link className="btn btn-primary" href="/create">Собрать demo-КП</Link>
+          <Link className="btn btn-secondary" href="/dashboard">Открыть дашборд</Link>
         </div>
       </section>
     </main>
