@@ -3,37 +3,23 @@ import Link from 'next/link'
 const reasons = [
   {
     title: 'Собирается быстро',
-    text: 'Не нужно заново верстать каждое КП. Берёте готовые пакеты, кейсы и условия — и отправляете ссылку.'
+    text: 'Пакеты и вводные уже под рукой. Не нужно каждый раз собирать КП в Word или Google Docs.'
   },
   {
-    title: 'Понятно, был ли интерес',
-    text: 'В дашборде видно, открыли ли КП, скачали ли PDF и кому пора писать follow-up.'
+    title: 'Ссылка вместо хаоса',
+    text: 'Клиент открывает красивую страницу с телефона, а не бесконечный PDF со сбитой вёрсткой.'
   },
   {
-    title: 'Заточено под digital-услуги',
-    text: 'Таргет, SMM, студии, продакшн и агентства. Не универсальный редактор документов, а инструмент продаж.'
+    title: 'Понятно, когда дожимать',
+    text: 'Видно просмотры, клики по CTA и скачивания PDF — есть повод написать вовремя, а не гадать.'
   }
 ]
 
 const steps = [
-  'Заполняете свои пакеты и кейсы один раз.',
-  'Выбираете клиента и нужные блоки.',
-  'Отправляете ссылку или PDF и видите реакцию.'
-]
-
-const faqs = [
-  {
-    q: 'Это замена PDF?',
-    a: 'Скорее улучшение. Клиент получает удобную страницу по ссылке, а при необходимости всё равно может скачать PDF.'
-  },
-  {
-    q: 'Для кого платформа подходит лучше всего?',
-    a: 'Для digital-услуг: SMM, таргета, контекста, веб-студий, продакшна и небольших агентств.'
-  },
-  {
-    q: 'Что делает продукт отличающимся?',
-    a: 'Скорость сборки, готовые пакеты и фокус на том, чтобы не просто отправить КП, а вовремя дожать клиента.'
-  }
+  'Добавьте 2–3 пакета услуг один раз.',
+  'Соберите КП под клиента за пару минут.',
+  'Отправьте ссылку и при необходимости PDF.',
+  'Смотрите активность и делайте follow-up по делу.'
 ]
 
 export default function HomePage() {
@@ -41,34 +27,32 @@ export default function HomePage() {
     <main className="container page-space">
       <section className="hero hero-grid">
         <div>
-          <span className="badge">КПлинк — MVP для агентств и digital-специалистов</span>
+          <span className="badge">MVP для digital-услуг</span>
           <h1>Соберите КП за 2 минуты и сразу узнайте, открыл ли его клиент.</h1>
           <p className="lead">
-            Пакеты, кейсы, ссылка, PDF и готовые follow-up сообщения — в одном месте.
-            Вместо ручной сборки в Google Docs и бесконечных «скиньте КП ещё раз».
+            Для агентств, таргета, SMM и студий: пакеты, кейсы, ссылка, PDF и готовый следующий шаг — в одном продукте.
           </p>
           <div className="actions">
-            <Link className="btn btn-primary" href="/proposal/demo-client">Посмотреть пример КП</Link>
-            <Link className="btn btn-secondary" href="/create">Собрать demo-КП</Link>
+            <Link className="btn btn-primary" href="/create">Собрать demo-КП</Link>
+            <Link className="btn btn-secondary" href="/proposal/demo-client">Посмотреть пример КП</Link>
           </div>
-          <p className="microcopy">Подходит для SMM, таргета, продакшна, веб-студий и небольших агентств.</p>
+          <p className="microcopy">Текущая версия уже позволяет пройти ключевой сценарий продукта прямо в браузере.</p>
         </div>
-
         <div className="card feature-panel">
-          <div className="mini-label">Что получает пользователь</div>
-          <div className="stack-sm">
-            <div className="inline-stat"><strong>7 мин</strong><span>до первого отправленного КП</span></div>
-            <div className="inline-stat"><strong>3 сигнала</strong><span>view, pdf_download, cta_click</span></div>
-            <div className="inline-stat"><strong>1 ссылка</strong><span>красивое КП вместо скучного файла</span></div>
+          <div className="mini-label">Что уже внутри</div>
+          <div className="stack-md">
+            <div className="inline-stat"><strong>Пакеты</strong><span>создайте свои шаблоны услуг и цен</span></div>
+            <div className="inline-stat"><strong>КП по ссылке</strong><span>публичная страница вместо скучного файла</span></div>
+            <div className="inline-stat"><strong>Базовый трекинг</strong><span>просмотры, CTA и скачивание PDF</span></div>
           </div>
           <div className="note-box">
-            Польза продукта не в «редакторе документов», а в том, что вы быстрее отправляете КП и лучше понимаете, когда пора дожимать клиента.
+            Сила продукта не в редакторе документов, а в том, что вы быстрее отправляете КП и лучше понимаете интерес клиента.
           </div>
         </div>
       </section>
 
       <section>
-        <h2 className="section-title">Почему это можно выставлять на рынок</h2>
+        <h2 className="section-title">Почему это можно показывать первым клиентам</h2>
         <div className="grid">
           {reasons.map((item) => (
             <div className="card" key={item.title}>
@@ -81,7 +65,7 @@ export default function HomePage() {
 
       <section className="split-section">
         <div>
-          <h2 className="section-title">Как это работает</h2>
+          <h2 className="section-title">Как работает MVP</h2>
           <div className="stack-md">
             {steps.map((step, index) => (
               <div className="step-row" key={step}>
@@ -92,46 +76,14 @@ export default function HomePage() {
           </div>
         </div>
         <div className="card highlight-card">
-          <div className="mini-label">Рыночный угол</div>
+          <div className="mini-label">Отстройка</div>
           <h3>Не «ещё один конструктор КП»</h3>
           <p>
-            Подача строится вокруг скорости, digital-специализации и follow-up. Это помогает отличаться от больших универсальных proposal-сервисов.
+            Позиционирование строится вокруг скорости, digital-специализации и follow-up. Это сильнее, чем просто обещать красивые документы.
           </p>
-          <Link className="btn btn-primary" href="/packages">Открыть пакеты</Link>
-        </div>
-      </section>
-
-      <section>
-        <h2 className="section-title">Что будет на продающей странице КП</h2>
-        <div className="grid grid-2">
-          <div className="card"><h3>Тарифы и состав работ</h3><p>Клиент сразу видит пакеты, цену, сроки и разницу между ними.</p></div>
-          <div className="card"><h3>Кейсы и доверие</h3><p>Показываете результат прошлых проектов и отвечаете на главные вопросы ещё до созвона.</p></div>
-          <div className="card"><h3>CTA под мессенджеры</h3><p>Вместо «напишите, если что» — конкретный следующий шаг: Telegram, WhatsApp или звонок.</p></div>
-          <div className="card"><h3>PDF на случай «скинь файлом»</h3><p>Публичная ссылка остаётся основной, но PDF можно дать по клику, не собирая его вручную.</p></div>
-        </div>
-      </section>
-
-      <section>
-        <h2 className="section-title">Частые вопросы</h2>
-        <div className="stack-md">
-          {faqs.map((faq) => (
-            <div className="card" key={faq.q}>
-              <h3>{faq.q}</h3>
-              <p>{faq.a}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="cta-band">
-        <div>
-          <div className="mini-label">Следующий шаг</div>
-          <h2>Уже можно показывать потенциальным клиентам и собирать обратную связь.</h2>
-          <p>Теперь это не только витрина: пакеты редактируются, а demo-КП создаётся внутри проекта и открывается по отдельной ссылке.</p>
-        </div>
-        <div className="actions actions-vertical">
-          <Link className="btn btn-primary" href="/create">Собрать demo-КП</Link>
-          <Link className="btn btn-secondary" href="/dashboard">Открыть дашборд</Link>
+          <div className="actions">
+            <Link className="btn btn-primary" href="/packages">Настроить пакеты</Link>
+          </div>
         </div>
       </section>
     </main>

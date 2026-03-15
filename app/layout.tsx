@@ -4,7 +4,7 @@ import { Nav } from '@/components/Nav'
 
 export const metadata: Metadata = {
   title: 'КПлинк',
-  description: 'Соберите КП за 2 минуты и сразу узнайте, открыл ли его клиент.'
+  description: 'КП для digital-услуг за 2 минуты: ссылка, PDF и сигнал интереса клиента.'
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

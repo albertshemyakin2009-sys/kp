@@ -17,10 +17,9 @@ export default function PricingPage() {
     <main className="container page-space">
       <section className="hero compact-hero">
         <span className="badge">Тарифы</span>
-        <h1>Простая тарифная логика для старта на рынке.</h1>
-        <p className="lead">На первом этапе достаточно двух планов: solo для специалистов и studio для маленьких команд.</p>
+        <h1>Простая тарифная логика для выхода на рынок.</h1>
+        <p className="lead">Сначала достаточно двух планов: solo для специалистов и studio для небольших команд.</p>
       </section>
-
       <section className="grid grid-2">
         {plans.map((plan) => (
           <div className={`card ${plan.featured ? 'featured-card' : ''}`} key={plan.name}>

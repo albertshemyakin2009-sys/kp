@@ -8,10 +8,10 @@ export function Nav() {
         <nav className="navlinks">
           <Link href="/packages">Пакеты</Link>
           <Link href="/create">Создать КП</Link>
+          <Link href="/dashboard">Дашборд</Link>
           <Link href="/pricing">Тарифы</Link>
-          <Link href="/dashboard">Демо</Link>
         </nav>
-        <Link href="/dashboard" className="btn btn-primary btn-small">Открыть демо</Link>
+        <Link href="/create" className="btn btn-primary btn-small">Собрать КП</Link>
       </div>
     </header>
   )
